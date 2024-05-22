@@ -42,7 +42,7 @@ To use the bot, simply type the corresponding slash command followed by any addi
 - `/tfa`: Generate a 2FA code.
 - `/resetbot [6-digit code]`: Reset the bot (admin only).
 - `/resetserver [6-digit code]`: Reset the server (admin only).
-- `/tengolag`: Shows the users how to make Project Zomboid to use more RAM.
+- `/tengolag`: Shows the users how to configure Project Zomboid to use more RAM.
 - `/players`: How many players are currently connected to the server
 
 ## Installation
