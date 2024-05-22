@@ -528,6 +528,8 @@ int main()
                 {
                     // Respond to the command
                     event.reply("Restarting bot");
+                    currentpass = 0;
+                    currenttime = 0;
                     exit(0);
                 }
                 else
