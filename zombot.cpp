@@ -107,7 +107,7 @@ void get_config()
     serverPort = cfg.lookup("server_port");
     // other variables
     std::cout << "Reading other variables" << std::endl;
-    paypal = cfg.lookup("paypal").c
+    paypal = cfg.lookup("paypal").c_str();
     steamLink = cfg.lookup("steam_link").c_str();
     delCommands = cfg.lookup("delete_commands").c_str();
     if (delCommands == "true")
@@ -562,14 +562,14 @@ int main()
             dados.add_option(dpp::command_option(dpp::co_string, "user", "tu user de zomboid", true));
             bot.global_command_create(dados);
             */
-            dpp::slashcommand reset("resetserver", "solo para admins", bot.me.id);
+            dpp::slashcommand resetserver("resetserver", "solo para admins", bot.me.id);
             reset.add_option(
                 dpp::command_option(dpp::co_integer, "passS", "password", true)
                     .set_min_value(100000)
                     .set_max_value(999999));
             bot.global_command_create(resetserver);
 
-            dpp::slashcommand reset("resetbot", "solo para admins", bot.me.id);
+            dpp::slashcommand resetbot("resetbot", "solo para admins", bot.me.id);
             reset.add_option(
                 dpp::command_option(dpp::co_integer, "passB", "password", true)
                     .set_min_value(100000)
