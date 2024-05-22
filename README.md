@@ -7,7 +7,7 @@ it uses Rcon Protocol to get all the data related. Feel free to modify it as you
 ## Features
 
 ### Dice
-- Roll dice within Discord using the bot.
+- Roll 1d100 and face the consequences or your luck inside the Zomboid server.
 
 ### ServerStatus
 - Get detailed information about the Project Zomboid server.
@@ -55,3 +55,8 @@ To use the bot, simply type the corresponding slash command followed by any addi
 
 
 ## Libraries used:
+
+[RCON++](https://github.com/Jaskowicz1/rconpp)
+[Telegram C++](https://github.com/reo7sp/tgbot-cpp/tree/master)
+[LibConfig++](https://github.com/hyperrealm/libconfig)
+[D++](https://github.com/brainboxdotcc/DPP)
