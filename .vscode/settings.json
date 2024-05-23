@@ -2,6 +2,8 @@
     "files.associations": {
         "xlocale": "cpp",
         "xlocinfo": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }

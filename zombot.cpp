@@ -53,6 +53,7 @@ int tailtime = 2; // parse the last X minutes of the log file
 bool is_valid = false;
 std::string paypal;
 std::string steamLink;
+int64_t newpass;
 
 rconpp::response response;
 // get the variables from a .config file
@@ -482,11 +483,11 @@ int main()
         }
         if (event.command.get_command_name() == "tfa")
         {
+            event.reply("Generando codigo de autenticacion y enviandolo a George");
             currentpass = generatePass();
             currenttime = generateTime();
             std::cout << "Sending TFA via Telegram with code: " << currentpass << " and time: " << currenttime << "\n";
             telebot.getApi().sendMessage(chat_id, "Tu codigo de autenticacion es: " + std::to_string(currentpass));
-            event.reply("TFA enviado");
         }
         if (event.command.get_command_name() == "resetserver")
             {
@@ -495,7 +496,7 @@ int main()
             {
                 event.reply("No hay un codigo de autenticacion activo");
             }
-                int64_t newpass = std::get<int64_t>(event.get_parameter("passS"));
+                newpass = std::get<int64_t>(event.get_parameter("passS"));
                 newtime = generateTime();
                 is_valid = validatePass(newpass, newtime, currentpass, currenttime);
                 if (is_valid == true)
@@ -521,7 +522,7 @@ int main()
             {
                 event.reply("No hay un codigo de autenticacion activo");
             }
-                int64_t newpass = std::get<int64_t>(event.get_parameter("passB"));
+                newpass = std::get<int64_t>(event.get_parameter("passB"));
                 newtime = generateTime();
                 is_valid = validatePass(newpass, newtime, currentpass, currenttime);
                 if (is_valid == true)
@@ -566,14 +567,14 @@ int main()
             */
             dpp::slashcommand resetserver("resetserver", "solo para admins", bot.me.id);
             resetserver.add_option(
-                dpp::command_option(dpp::co_integer, "passS", "password", true)
+                dpp::command_option(dpp::co_integer, "passS", "passwordS", true)
                     .set_min_value(100000)
                     .set_max_value(999999));
             bot.global_command_create(resetserver);
 
             dpp::slashcommand resetbot("resetbot", "solo para admins", bot.me.id);
             resetbot.add_option(
-                dpp::command_option(dpp::co_integer, "passB", "password", true)
+                dpp::command_option(dpp::co_integer, "passB", "passwordB", true)
                     .set_min_value(100000)
                     .set_max_value(999999));
             bot.global_command_create(resetbot);

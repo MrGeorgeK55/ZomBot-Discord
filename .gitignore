@@ -1,3 +1,6 @@
 /commanddeleter.cpp
 /config.cfg
 /example.cpp
+/.vscode/*
+/.vscode
+.vscode/settings.json
