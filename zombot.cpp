@@ -496,7 +496,7 @@ int main()
             {
                 event.reply("No hay un codigo de autenticacion activo");
             }
-                newpass = std::get<int64_t>(event.get_parameter("passS"));
+                newpass = std::get<int64_t>(event.get_parameter("passs"));
                 newtime = generateTime();
                 is_valid = validatePass(newpass, newtime, currentpass, currenttime);
                 if (is_valid == true)
@@ -522,7 +522,7 @@ int main()
             {
                 event.reply("No hay un codigo de autenticacion activo");
             }
-                newpass = std::get<int64_t>(event.get_parameter("passB"));
+                newpass = std::get<int64_t>(event.get_parameter("passb"));
                 newtime = generateTime();
                 is_valid = validatePass(newpass, newtime, currentpass, currenttime);
                 if (is_valid == true)
