@@ -567,14 +567,14 @@ int main()
             */
             dpp::slashcommand resetserver("resetserver", "solo para admins", bot.me.id);
             resetserver.add_option(
-                dpp::command_option(dpp::co_integer, "passS", "passwordS", true)
+                dpp::command_option(dpp::co_integer, "passs", "passwords", true)
                     .set_min_value(100000)
                     .set_max_value(999999));
             bot.global_command_create(resetserver);
 
             dpp::slashcommand resetbot("resetbot", "solo para admins", bot.me.id);
             resetbot.add_option(
-                dpp::command_option(dpp::co_integer, "passB", "passwordB", true)
+                dpp::command_option(dpp::co_integer, "passb", "passwordb", true)
                     .set_min_value(100000)
                     .set_max_value(999999));
             bot.global_command_create(resetbot);
